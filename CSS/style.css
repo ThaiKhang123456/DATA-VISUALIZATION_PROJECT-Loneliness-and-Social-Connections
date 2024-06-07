@@ -14,7 +14,7 @@ body{
 	margin-right: 100px;
 }
 .logo img{
-	width: 150px ;
+	width: 100px ;
 	height:90px ;
 }
 .menu-mini{
@@ -54,6 +54,13 @@ body{
 	transition: all 0.s linear;
 }
 /*content------------------------------*/
+.content{
+	display: flex;
+}
+.content .board img{
+	width: 800px;
+	height: 350px;
+}
 h3, .para{
 	font-family: Myriad Pro;
 	color: #FFF;

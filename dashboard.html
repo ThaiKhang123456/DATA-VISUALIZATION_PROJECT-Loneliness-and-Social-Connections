@@ -11,36 +11,40 @@
 	<!-- menu -->
 		<div class="menu">
 			<div class="logo">
-				<img src="images/label.jpg">
+				<img src="images/label.png">
 			</div>
 
 			<div class="menu-mini">
 			<ul>
 				<li class="menu-item"><a href="./dashboard.html" class="menu-link">Dashboard</a></li>
 				<li class="menu-item"><a href="./index.html" class="menu-link">About us</a></li>
-				<li class="menu-item"><a href="#" class="menu-link">Global Map</a></li>
-				<li class="menu-item"><a href="#" class="menu-link">City Graph</a></li>
-				<li class="menu-item"><a href="#" class="menu-link">Regional HeatMap</a></li>
+			
+				<li class="menu-item"><a href="#" class="menu-link">Self-Reported Lonliness</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">One-Person Households Rate</a></li>
 			</ul>
 			</div>
 		</div>	
 	<div class="line-effect"></div>
 	<!-- content -->
-	<div class="wrap">
-		<div class="contain">
-			<div class="world"><h3>WORLD WEATHER</h3></div>
-		 	<div class="para">Welcome to the World Weather System Dashboard! Picture yourself navigating through a world of weather insights. Start with the Global Map View to see dynamic overlays of temperature, precipitation, and wind patterns across the globe. Curious about how different capitals fare? Use the City Comparison Graphs to visualize and compare weather trends in cities like Tokyo, New York, and Paris. For a regional perspective, the Regional Heatmaps offer vivid visualizations of weather patterns, allowing you to toggle parameters for a deeper look. Explore, compare, and understand the weather like never before.</div>
+	 <div class="content">
+		<div class="wrap">
+			<div class="contain">
+				<div class="world"><h3>LONELINESS AND SOCIAL CONNECTION</h3></div>
+				 <div class="para">Welcome to this interactive dashboard exploring the growing concern of loneliness, especially among older adults. We'll unveil data on self-reported loneliness and the rising trend of single-person households.  This journey aims to raise awareness and equip you with resources to foster stronger social connections within your community. Dive deeper and become part of the solution!</div>
+			</div>
+				 
+	
+				<div class="button">
+					<img src="images/next-button.png" alt="Clickable Image" class="clickable-image" onclick=navigateToPage()>
+				</div>
+			 
+	
+	
 		</div>
-		 	
-
-		    <div class="button">
-		    	<img src="images/next-button.png" alt="Clickable Image" class="clickable-image" onclick=navigateToPage()>
-		    </div>
-		 
-
-
-	</div>
-
+		<div class="board"><img src="images/lonely.png"></div>
+	
+	 </div>
+	
 	<script>
 		function navigateToPage() {
             window.location.href = "./index.html";
