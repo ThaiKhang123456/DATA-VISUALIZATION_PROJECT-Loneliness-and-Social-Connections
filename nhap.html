@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage of one-person households, 1950 to 2018</title>
+    <link rel="stylesheet" href="nhap.css">
+</head>
+<body>
+<!---------->
+    <div class="menu">
+		<div class="logo">
+			<img src="images/label.png">
+		</div>
+
+		<div class="menu-mini">
+		<ul>
+			<li class="menu-item"><a href="./dashboard.html" class="menu-link">Dashboard</a></li>
+			<li class="menu-item"><a href="./index.html" class="menu-link">About us</a></li>
+			
+			<li class="menu-item"><a href="#" class="menu-link">Self-Reported Lonliness</a></li>
+			<li class="menu-item"><a href="nhap.html" class="menu-link">One-Person Households Rate</a></li>
+		</ul>
+		</div>
+	</div>	
+<!------------------->
+    <div class="container">
+        <div class="left-panel">
+            <h1>Percentage of one-person households, 1950 to 2018</h1>
+            <p>Number of one-person households as a share of the total number of households. Estimates combine multiple sources, including cross-country surveys and census data.</p>
+            <div id="chart"></div>
+            <script src="https://d3js.org/d3.v6.min.js"></script>
+            <script src="chart.js"></script>
+        </div>
+        <div class="right-panel">
+            
+            <h2>ADD/REMOVE COUNTRIES AND REGIONS</h2>
+            <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a country or region">
+        </div>
+        
+        <div class="selection-container">
+            <h3>Selection</h3>
+            <ul id="selected-entities"></ul>
+        </div>
+        
+        <div class="countries-container">
+            <h3>Countries and regions</h3>
+            <ul id="all-entities"></ul>
+        </div>
+    
+        <div class="actions">
+            <a href="#" id="clear-selection">Clear</a>
+            <a href="#" id="select-all">Select all</a>
+        </div>
+    
+    </div>
+</div>
+    
+</body>
+</html>
