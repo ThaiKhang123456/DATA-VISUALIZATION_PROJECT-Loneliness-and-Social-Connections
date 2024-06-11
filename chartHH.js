@@ -29,33 +29,6 @@ d3.csv("one-person-households.csv").then(function(data) {
       .x(d => x(d.Year))
       .y(d => y(d["Share of one person households"]));
   
-    // Add legend
-    
-    const legend = svg.selectAll(".legend")
-      .data(countries)
-      .enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", (d, i) => `translate(${50}, ${height - 80 + i * 20})`);
-  
-    legend.append("rect")
-      .attr("x", 0)
-      .attr("width", 10)
-      .attr("height", 10)
-      .attr("fill", (d, i) => getRandomColor());
-  
-    legend.append("text")
-      .attr("x", 20)
-      .attr("y", 10)
-      .attr("dy", ".35em")
-      .text(d => d)
-      .on("mouseover", function(d) {
-        d3.selectAll(".line").style("opacity", 0.2);
-        d3.selectAll(`.line-${countries.indexOf(d)}`).style("opacity", 1);
-      })
-      .on("mouseout", function() {
-        d3.selectAll(".line").style("opacity", 1);
-      });
-  
     // Add tooltip
     const tooltip = d3.select("#chart")
       .append("div")
