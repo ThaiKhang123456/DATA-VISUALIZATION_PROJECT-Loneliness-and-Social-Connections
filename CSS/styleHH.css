@@ -1,0 +1,204 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #07849D;
+}
+/*****************************************/
+/*****************************************/
+.menu{
+  margin-left: 99px;
+  margin-top: 8px;
+    display: flex;
+    /* justify-content: center; */
+  }
+  .logo{
+    margin-right: 100px;
+  }
+  .logo img{
+    width: 100px ;
+    height:90px ;
+  }
+  .menu-mini{
+    margin-top: 18px;
+  }
+  .icon{
+    margin-top: 18px;
+  }
+  .menu-mini ul{
+    display: flex;
+    padding: 0px;
+  }
+  .menu-mini ul li:hover>a{
+    color: #7fad39;
+  }
+  .menu .menu-mini ul li{
+    list-style: none;
+    padding: 0px;
+  
+  }
+  .menu .menu-mini ul li a{
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 61px;
+  }
+  
+  .line-effect{
+    width: 0;
+    height: 2px;
+    background-color: green;
+    position: fixed;
+    pointer-events: none;
+    transition: all 0.s linear;
+  }
+  /*content------------------------*/
+  
+    h3{
+      margin-left: 100px;
+      font-family: Myriad Pro;
+      color: #FFF;
+      margin-top: 30px;
+      margin-bottom: -15px ;
+    }
+    
+    
+    .wrap a{
+      color: #FFF;
+    }
+    
+  fieldset{width: 500px;
+        height: 300px;
+        margin: 30px auto;
+        background-color: #333333}
+          
+  .content fieldset a{
+    color: #fff;
+    text-decoration:none ;
+  }
+  .content fieldset legend{
+    color: #fff;
+  }
+  .container{
+    display: flex;
+  }
+  legend div{
+    background-color: #71CFF4;
+    width:188px;
+    height: 22px;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  marquee{
+    background-color: #333333;
+    color: #fff;
+  }
+/*****************************************/
+/*****************************************/
+  h1 {
+    text-align: center;
+  }
+  
+  #chart {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .container {
+    display: flex;
+    height: 75vh;
+  }
+  
+  .left-panel {
+    flex: 2;
+    background-color: #f5f5f5;
+    padding: 40px;
+  }
+  
+  .right-panel {
+    flex: 1;
+    background-color: #fff;
+    padding: 40px;
+    border-left: 1px solid #ddd;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  #line-chart {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .selection-container, .countries-container {
+    margin-bottom: 40px;
+  }
+  
+  .selection-container ul, .countries-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .selection-container li, .countries-container li {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .selection-container li input[type="checkbox"], .countries-container li input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .actions a {
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  /* Áp dụng hiệu ứng xoay lật cho phần tử có class "flipped" */
+.flipped.flipped--flipped {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+/* Tùy chỉnh giao diện của checkbox */
+.custom {
+
+  display: inline;
+  vertical-align: middle;
+  position: relative;
+}
+
+
+input[type="checkbox"]:checked + .custom::before {
+  opacity: 1;
+}
+
+/* Tùy chỉnh giao diện của nhãn */
+.label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-weight: bold;
+}
