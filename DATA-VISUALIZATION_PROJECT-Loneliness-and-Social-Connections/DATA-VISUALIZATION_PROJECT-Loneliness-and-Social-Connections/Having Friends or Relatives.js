@@ -79,21 +79,29 @@ d3.csv("people-who-report-having-friends-or-relatives-they-can-count-on.csv").th
     // Update chart based on checkbox selection
     function updateChart() {
         const selectedCountries = checkboxContainer.selectAll("input:checked").nodes().map(d => d.value);
-
+    
         const filteredData = data.filter(d => selectedCountries.includes(d.Entity));
-
+    
+        // Update Y axis domain based on filtered data
         y.domain(filteredData.map(d => d.Entity));
-
-        yAxis.transition().call(d3.axisLeft(y).tickSize(0))
+    
+        // Update Y axis labels
+        const yAxis = svg.select(".y-axis")
+            .call(d3.axisLeft(y).tickSize(0))
             .selectAll("text")
             .attr("class", "axis-label")
-            .style("fill", "white");
-
-        bars = svg.selectAll(".bar")
+            .style("fill", d => filteredData.some(data => data.Entity === d) ? "white" : "none");  // Hide label if no longer in filtered data
+    
+        // Update bars
+        const bars = svg.selectAll(".bar")
             .data(filteredData, d => d.Entity);
-
-        bars.exit().transition().attr("y", height).attr("height", 0).remove();
-
+    
+        bars.exit()
+            .transition()
+            .attr("y", height)
+            .attr("height", 0)
+            .remove();
+    
         bars.enter().append("rect")
             .attr("class", "bar")
             .attr("x", x(0))
@@ -105,12 +113,16 @@ d3.csv("people-who-report-having-friends-or-relatives-they-can-count-on.csv").th
             .transition()
             .attr("y", d => y(d.Entity))
             .attr("height", y.bandwidth());
-
-        labels = svg.selectAll(".label")
+    
+        // Update labels
+        const labels = svg.selectAll(".label")
             .data(filteredData, d => d.Entity);
-
-        labels.exit().transition().attr("y", height).remove();
-
+    
+        labels.exit()
+            .transition()
+            .attr("y", height)
+            .remove();
+    
         labels.enter().append("text")
             .attr("class", "label")
             .attr("x", d => x(d["People who report having friends or relatives they can count on"]) + 5)
@@ -122,7 +134,7 @@ d3.csv("people-who-report-having-friends-or-relatives-they-can-count-on.csv").th
             .attr("x", d => x(d["People who report having friends or relatives they can count on"]) + 5)
             .attr("y", d => y(d.Entity) + y.bandwidth() / 2 + 5)
             .text(d => d["People who report having friends or relatives they can count on"] + '%');
-    }
+    }                     
 });
 
 
