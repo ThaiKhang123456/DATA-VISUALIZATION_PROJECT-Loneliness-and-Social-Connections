@@ -59,10 +59,12 @@ body{
     font: 14px sans-serif;
     fill: white;
 }
+
 .axis-label {
     font: 14px sans-serif;
     fill: white;
 }
+
 .controls {
     display: flex;
     align-items: flex-start;
@@ -71,6 +73,7 @@ body{
     top: 10px;
     right: 10px;
 }
+
 .checkbox-container {
     background: white;
     border: 1px solid #ccc;
@@ -80,6 +83,7 @@ body{
     display: none;
     color: black;
 }
+
 .checkbox-container label {
     display: block;
 }
