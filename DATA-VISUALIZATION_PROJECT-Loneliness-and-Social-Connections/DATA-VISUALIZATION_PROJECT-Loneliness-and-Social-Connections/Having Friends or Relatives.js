@@ -1,5 +1,5 @@
 // Load the CSV file
-d3.csv("people-who-report-having-friends-or-relatives-they-can-count-on.csv").then(data => {
+d3.csv("reliable-support.csv").then(data => {
     // Format the data
     data.forEach(d => {
         d["People who report having friends or relatives they can count on"] = +d["People who report having friends or relatives they can count on"];
