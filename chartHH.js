@@ -98,3 +98,17 @@ d3.csv("one-person-households.csv").then(function(data) {
     }
     return color;
   }
+  function flipEntities(checkbox) {
+    const entity = checkbox.closest('.entity-section');
+    entity.classList.toggle('checked');
+  
+    if (entity.classList.contains('checked')) {
+      // Thêm phần tử vào div "selection"
+      const selectionDiv = document.querySelector('.selection');
+      selectionDiv.appendChild(entity);
+    } else {
+      // Trả phần tử về div "entity-section"
+      const entitySection = document.querySelector('.entity-section');
+      entitySection.appendChild(entity);
+    }
+  }
