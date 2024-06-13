@@ -107,8 +107,9 @@ d3.csv("../DATA/one-person-households.csv")
     const OriginalData = data;
 
     // Data array 2 - Entity column with default false checkboxes
-    const checkboxData = OriginalData.map(d => ({
-      entity: d.Entity,
+    const entitySet = new Set(OriginalData.map(d => d.Entity));
+    const checkboxData = Array.from(entitySet).map(entity => ({
+      entity,
       checked: false
     }));
 
@@ -120,13 +121,19 @@ d3.csv("../DATA/one-person-households.csv")
 
     // Data array 5 - Data from data1 where entity is in data3
     const filteredData = OriginalData.filter(d => checkedData.some(e => e.entity === d.Entity));
-    
-    
-    renderCheckboxes(data2, data3, data4)
-    
+
+    // Define the renderCheckboxes function
+    function renderCheckboxes(checkboxData, checkedData, uncheckedData) {
+      // Code to render the checkboxes goes here
+      console.log("Rendering checkboxes...");
+      console.log("Checked data:", checkedData);
+      console.log("Unchecked data:", uncheckedData);
+    }
+
+    renderCheckboxes(checkboxData, checkedData, uncheckedData);
 
     // Use d3.js to create a line chart
-    const svg = d3.select("body")
+    const svg = d3.select("chart")
       .append("svg")
       .attr("width", 800)
       .attr("height", 500);
@@ -164,4 +171,3 @@ d3.csv("../DATA/one-person-households.csv")
   .catch(function(error) {
     console.error("Error loading data:", error);
   });
-  
