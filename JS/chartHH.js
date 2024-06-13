@@ -1,5 +1,4 @@
-d3.csv("../DATA/one-person-households.csv").then(function(data) {
-
+/*
   // Tạo biến để lưu trữ các quốc gia được chọn
   let selectedCountries = [];
   // Parse the data
@@ -101,3 +100,68 @@ d3.csv("../DATA/one-person-households.csv").then(function(data) {
     return color;
   }
 
+*/
+d3.csv("../DATA/one-person-households.csv")
+  .then(function(data) {
+    // Data array 1 - Full original data
+    const OriginalData = data;
+
+    // Data array 2 - Entity column with default false checkboxes
+    const checkboxData = OriginalData.map(d => ({
+      entity: d.Entity,
+      checked: false
+    }));
+
+    // Data array 3 - Checkboxes with status true
+    const checkedData = checkboxData.filter(d => d.checked);
+
+    // Data array 4 - Checkboxes with status false
+    const uncheckedData = checkboxData.filter(d => !d.checked);
+
+    // Data array 5 - Data from data1 where entity is in data3
+    const filteredData = OriginalData.filter(d => checkedData.some(e => e.entity === d.Entity));
+    
+    
+    renderCheckboxes(data2, data3, data4)
+    
+
+    // Use d3.js to create a line chart
+    const svg = d3.select("body")
+      .append("svg")
+      .attr("width", 800)
+      .attr("height", 500);
+
+    const x = d3.scaleLinear()
+      .range([50, 750])
+      .domain(d3.extent(filteredData, d => new Date(d.Year, 0)));
+
+    const y = d3.scaleLinear()
+      .range([450, 50])
+      .domain([0, d3.max(filteredData, d => parseFloat(d["Share of one person households"]))]);
+
+    const line = d3.line()
+      .x(d => x(new Date(d.Year, 0)))
+      .y(d => y(parseFloat(d["Share of one person households"])));
+
+    svg.selectAll(".line")
+      .data(filteredData)
+      .enter()
+      .append("path")
+      .attr("class", "line")
+      .attr("d", line)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 2);
+
+    svg.append("g")
+      .attr("transform", "translate(0,450)")
+      .call(d3.axisBottom(x));
+
+    svg.append("g")
+      .attr("transform", "translate(50,0)")
+      .call(d3.axisLeft(y));
+  })
+  .catch(function(error) {
+    console.error("Error loading data:", error);
+  });
+  
