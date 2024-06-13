@@ -12,23 +12,23 @@ body {
   display: flex;
   /* justify-content: center; */
 }
-  .logo{
-    margin-right: 100px;
-  }
-  .logo img{
-    width: 100px ;
-    height:90px ;
-  }
-  .menu-mini{
-    margin-top: 18px;
-  }
-  .icon{
-    margin-top: 18px;
-  }
-  .menu-mini ul{
-    display: flex;
-    padding: 0px;
-  }
+.logo{
+  margin-right: 100px;
+}
+.logo img{
+  width: 100px ;
+  height:90px ;
+}
+.menu-mini{
+  margin-top: 18px;
+}
+.icon{
+  margin-top: 18px;
+}
+.menu-mini ul{
+  display: flex;
+  padding: 0px;
+}
   .menu-mini ul li:hover>a{
     color: #7fad39;
   }
@@ -76,194 +76,25 @@ body {
         margin: 30px auto;
         background-color: #333333}
           
-  .content fieldset a{
-    color: #fff;
-    text-decoration:none ;
-  }
-  .content fieldset legend{
-    color: #fff;
-  }
-  .container{
-    display: flex;
-  }
-  legend div{
-    background-color: #71CFF4;
-    width:188px;
-    height: 22px;
-    padding: 4px;
-    border-radius: 4px;
-  }
-  marquee{
-    background-color: #333333;
-    color: #fff;
-  }
-/*****************************************/
-/*****************************************/
-  h1 {
-    text-align: center;
-  }
-  
-  #chart {
-    width: 100%;
-    height: 500px;
-  }
-  
-  .container {
-    display: flex;
-    height: 75vh;
-  }
-  
-  .left-panel {
-    overflow-y: scroll;
-    flex: 4;
-    background-color: #f5f5f5;
-    padding: 50px;
-  }
-  
-  .right-panel {
-    overflow-y: scroll; 
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-left: 1px solid #000000;
-  }
-  
-  h1, h2, h3 {
-    color: #000000;
-  }
-  
-  #line-chart {
-    width: 100%;
-    height: 500px;
-  }
-  
-  .search-container {
-    margin-bottom: 20px;
-  }
-  
-  .search-container input {
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: 1px solid #fb0000;
-    border-radius: 40px;
-  }
-  
-  .selection-container, .countries-container {
-    margin-bottom: 40px;
-  }
-  
-  .selection-container ul, .countries-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .selection-container li, .countries-container li {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  
-  .selection-container li input[type="checkbox"], .countries-container li input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  
-  /* Áp dụng hiệu ứng xoay lật cho phần tử có class "flipped" */
-  .entity-section.flipped {
-    transform: rotateY(180deg);
-    opacity: 0;
-    order: 2;
-  }
-  
-  .entity-section.flipped.checked {
-    transform: rotateY(0deg);
-    opacity: 1;
-    order: 1;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .selection {
-    order: 1;
-  }
-  
-  .selection .flipped {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-  }
-
-/* Tùy chỉnh giao diện của checkbox */
-.custom {
-
-  display: inline;
-  vertical-align: middle;
-  position: relative;
+.content fieldset a{
+  color: #fff;
+  text-decoration:none ;
+}
+.content fieldset legend{
+  color: #fff;
+}
+.container{
+  display: flex;
+}
+legend div{
+  background-color: #71CFF4;
+  width:188px;
+  height: 22px;
+  padding: 4px;
+  border-radius: 4px;
+}
+marquee{
+  background-color: #333333;
+  color: #fff;
 }
 
-
-input[type="checkbox"]:checked + .custom::before {
-  opacity: 1;
-}
-
-/* Tùy chỉnh giao diện của nhãn */
-.label {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 10px;
-  font-weight: bold;
-}
-
- /*******************************************
-  *
-  *  Data Table
-  *
-  *******************************************/
-  #data-table {
-    flex: 1;
-    margin: 50px;
-    width: calc(30% );
-    height: 500px; 
-    overflow-y: scroll; 
-    border: 1px solid #ccc;
-}
-
-.data-table {
-    width:100%;
-    border-collapse: collapse;
-}
-
-.data-table th, .data-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-}
-
-.data-table th {
-    background-color: #000000; 
-    color: white; 
-    font-weight: bold; 
-}
-
-.data-table tr {
-    transition: background-color 0.3s, font-weight 0s;
-}
-
-.data-table tr:hover {
-    background-color: rgb(218, 218, 218);
-    font-weight: bold; 
-}
-
-.data-table th, .data-table td {
-    padding: 8px;
-    border: 1px solid #ccc;
-    text-align: left;
-    transition: background-color 0.3s, font-weight 0s; 
-}

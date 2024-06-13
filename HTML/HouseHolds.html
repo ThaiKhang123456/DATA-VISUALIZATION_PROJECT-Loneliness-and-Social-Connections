@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percentage of one-person households, 1950 to 2018</title>
-    <link rel="stylesheet" type="text/css" href="CSS/styleHH.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/styleHH.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/chartHH.css">
 </head>
 <body>
     <!-- menu -->
     <div class="menu">
         <div class="logo">
-            <img src="images/label.png">
+            <img src="../images/label.png">
         </div>
 
         <div class="menu-mini">
@@ -26,72 +27,42 @@
     <div class="line-effect"></div>
 
 
-    <div class="container">
-        <div class="left-panel">
-            <h1>Percentage of one-person households, 1950 to 2018</h1>
-            <p>Number of one-person households as a share of the total number of households. 
-                Estimates combine multiple sources, including cross-country surveys and census data.
-            </p>
-            <div id="chart"></div>
-            <script src="https://d3js.org/d3.v6.min.js"></script>
-            <script src="chartHH.js"></script>
-            <script src="DataEntity.js"></script>
-            <div class="row padding">
-                <div class="col span_24">
-                    <div id="data-table" style="text-align: right;"> </div>
-                </div>
-                <div id="dataTable"></div>
-            </div> 
-        </div>   
-            
-        <div class="right-panel">
-            <div class="entity-selector">
-                <div class="overlay-header">
-                    <h2 class="title clickable">Add/remove countries and regions</h2>
-                    <button type="button" class="close-button">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" 
-                        class="svg-inline--fa fa-xmark " role="img" xmlns="http://www.w3.org/2000/svg" 
-                            viewBox="0 0 384 512">
-                            <path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 
-                                0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 
-                                0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 
-                                297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="entity-selector__search-bar">
-                    <div class="search-input search-input--empty">
-                        <input type="search" placeholder="Search for a country or region" value="">
+    <div class="container-all">
+        <div class="left-container">
+            <div class="title-box">
+                <h1>Percentage of one-person households, 1950 to 2018</h1>
+                <p>Number of one-person households as a share of the total number of households. 
+                    Estimates combine multiple sources, including cross-country surveys and census data.
+                </p>
+            </div>
+            <div class="box">  
+                <div class=left>  
+                    <div id="chart"></div>
+                    <script src="https://d3js.org/d3.v6.min.js"></script>
+                    <script src="../JS/chartHH.js"></script>
+                    
+                </div> 
+                <div class="right">
+                    <div class="col span_24">
+                        <div id="data-table" style="text-align: center;"> 
                         
-                    </div>
-                </div>
-                <div class="scrollable">
-                    <div class="entity-selector__sort-bar">
-                        <span class="label grapher_label-2-medium grapher_light">Sort by
-                        </span>
-                        <div class="grapher-dropdown css-b62m3t-container">
-                            <span id="react-select-6-live-region" class="css-7pg0cj-a11yText">
-                            </span>
-                            <span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log" class="css-7pg0cj-a11yText">
-
-                            </span>
-                            <div class="control css-cp01gg-control">
-                                <div class=" css-14oxtc6">
-                                    <div class=" css-w54w9q-singleValue">Name
-                                    </div>
-                                    <input id="react-select-6-input" tabindex="0" inputmode="none" aria-autocomplete="list" aria-expanded="false" 
-                                    aria-haspopup="true" role="combobox" aria-readonly="true" class="css-1hac4vs-dummyInput" value="">
-                                </div>
-                                <div class=" css-1wy0on6">
-                                </div>
-                            </div>
                         </div>
-                        <button type="button" class="sort">
-                            <span class="sort-icon">
-                                
-                            </span>
-                        </button>
+                        <div id="dataTable">
+    
+                        </div>
+                        <script src="../JS/DataEntity.js"></script>
+                    </div> 
+                </div>  
+            </div>
+        </div>
+        <div class="right-container">
+            <h2>Add/remove countries and regions</h2>
+            <div class="entity-selector">
+                
+                
+                
+                <div class="scrollable">
+                    <div class="entity-select">
                     </div>
                 <div class="entity-selector__content">
                 </div>
