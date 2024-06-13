@@ -4,7 +4,7 @@ h1,h2 {
   
 #chart {
     width: 100%;
-    height: 500px;
+    height: 500px; 
 }
   
 .container-all {
@@ -38,13 +38,15 @@ h1,h2 {
 }
   
 .right-container {
+    display:block;
     overflow-y: scroll; 
     flex: 2;
     background-color: #fff;
     padding: 20px;
     border-left: 1px solid #000000;
 }
-  
+
+
   
   /* Áp dụng hiệu ứng xoay lật cho phần tử có class "flipped" */
   .entity-section.flipped {
