@@ -122,15 +122,6 @@ d3.csv("../DATA/one-person-households.csv")
     // Data array 5 - Data from data1 where entity is in data3
     const filteredData = OriginalData.filter(d => checkedData.some(e => e.entity === d.Entity));
 
-    // Define the renderCheckboxes function
-    function renderCheckboxes(checkboxData, checkedData, uncheckedData) {
-      // Code to render the checkboxes goes here
-      console.log("Rendering checkboxes...");
-      console.log("Checked data:", checkedData);
-      console.log("Unchecked data:", uncheckedData);
-    }
-
-    renderCheckboxes(checkboxData, checkedData, uncheckedData);
 
     // Use d3.js to create a line chart
     const svg = d3.select("chart")
