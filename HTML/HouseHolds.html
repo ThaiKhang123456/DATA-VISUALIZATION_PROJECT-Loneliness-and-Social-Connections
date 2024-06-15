@@ -45,29 +45,35 @@
                 <!--  --> 
                 <div class=left>  
                     <div id="chart"></div>
-                    <script src="https://d3js.org/d3.v6.min.js"></script> 
+                    <script src="https://d3js.org/d3.v6.min.js"></script>
+                    <script src="../JS/chartHH.js"></script>
                 </div> 
 
                 <!--  -->
                 <div class="right">
-                    <div class="col span_24">
-                        <div id="data-table" style="text-align: center;"> 
-                        
-                        </div>
-                        <div id="dataTable">
-    
-                        </div>
-                       
-                    </div> 
+                    <div class="year-table-container">
+                        <table id="data-table">
+                          <thead>
+                            <tr>
+                              <th>Year</th>
+                              <th>Entity</th>
+                              <th>Share of one person households</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
                 </div>  
             </div>
         </div>
         <!--  -->
         <div class="right-container">
-            
-            <h2>Add/remove countries and regions</h2>
-
+            <div class="right-container-top">
+                <h2>Add/remove countries and regions</h2>
+            </div>
+            <div class="right-container-middle">
                 <div class="list">Countries and regions
+                    
                     <ul>
                         <li><a href="#Afghanistan"><input type="checkbox" id="Afghanistan" > Afghanistan</a></li>
                         <li><a href="#Albania"><input type="checkbox" id="Albania" > Albania</a></li>
@@ -224,13 +230,13 @@
                         <li><a href="#Zambia"><input type="checkbox" id="Zambia" > Zambia</a></li>
                         <li><a href="#Zimbabwe"><input type="checkbox" id="Zimbabwe" > Zimbabwe</a></li>
                     </ul>
-                    
+            
                 </div>
             </div>
-            <div class="Clear">
-                <button type="button" disabled="">Clear
-    
-                </button>
+            <div class="right-container-bottom">
+                <div class="Clear-Button-Container">
+            
+                </div>
             </div>
         </div>
         
@@ -238,7 +244,6 @@
         </div>
         
     </div>
-    <script src="../JS/chartHH.js"></script>
     
 </body>
 </html>

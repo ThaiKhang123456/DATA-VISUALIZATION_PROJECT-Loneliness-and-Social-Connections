@@ -119,11 +119,31 @@ body {
   }
   
   .right-panel {
-    overflow-y: scroll; 
+    border-collapse: collapse;
+    display:block;
+    /*overflow-y: scroll; */
     flex: 1;
     background-color: #fff;
     padding: 20px;
     border-left: 1px solid #000000;
+  }
+  .right-container-top{
+    border-collapse: collapse;
+    border-bottom: 1px solid #000000;
+    display:block;
+  }
+  .right-container-middle{
+    border-collapse: collapse;
+    max-height: 625px;
+    overflow-y: auto;
+    display:block;
+    border-bottom: 1px solid #000000;
+  }
+  .right-container-bottom{
+    text-align: center;
+    border-collapse: collapse;
+    padding: 15px;
+    display:block;
   }
   
   h1, h2, h3 {
@@ -166,30 +186,23 @@ body {
   .selection-container li input[type="checkbox"], .countries-container li input[type="checkbox"] {
     margin-right: 10px;
   }
-  
-  
-  /* Áp dụng hiệu ứng xoay lật cho phần tử có class "flipped" */
-.entity-section.flipped {
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-
-/* Tùy chỉnh giao diện của checkbox */
-.custom {
-
-  display: inline;
-  vertical-align: middle;
-  position: relative;
-}
+  .marker-tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 12px;
+    z-index: 10;
+  }
+ 
 
 
-input[type="checkbox"]:checked + .custom::before {
-  opacity: 1;
-}
+
+
 
 /* Tùy chỉnh giao diện của nhãn */
 .label {
-  display: inline-block;
+  display: inline;
   vertical-align: middle;
   margin-left: 10px;
   font-weight: bold;
