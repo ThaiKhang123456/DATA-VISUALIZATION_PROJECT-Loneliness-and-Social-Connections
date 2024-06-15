@@ -1,6 +1,7 @@
 d3.csv("../DATA/one-person-households.csv")
   .then(function(data) {
-    
+    console.log(d3.version);
+
     // Create the chart
     const width = 900;
     const height = 600;
@@ -113,9 +114,9 @@ d3.csv("../DATA/one-person-households.csv")
         .attr("class", "marker")
         .attr("cx", d => x(d.Year))
         .attr("cy", d => y(d["Share of one person households"]))
-        .attr("r", 1.5)
+        .attr("r", 1)
         .attr("fill", "black")
-        .on("mouseover", function(d) {
+        .on("mouseover", function(event,d) {
           // Hiển thị thông tin mốc khi di chuột vào
           const markerData = [
             `Year: ${d.Year}`,
