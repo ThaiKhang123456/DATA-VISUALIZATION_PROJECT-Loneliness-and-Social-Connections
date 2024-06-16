@@ -1,6 +1,6 @@
 d3.csv("../DATA/one-person-households.csv")
   .then(function(data) {
-    console.log(d3.version);
+
 
     // Create the chart
     const width = 900;
@@ -8,13 +8,15 @@ d3.csv("../DATA/one-person-households.csv")
     const svg = d3.select("#chart")
       .append("svg")
       .attr("width", width)
-      .attr("height", height);
+      .attr("height", height)
+      .attr("stroke-width", "2px") ;
 
 
     // Create the scales
     const x = d3.scaleLinear()
       .range([50, width - 50])
-      .domain(d3.extent(data, d => +d.Year));
+      .domain(d3.extent(data, d => +d.Year))
+      
     const y = d3.scaleLinear()
       .range([height - 100, 50])
       .domain([0, 50]);
@@ -118,6 +120,7 @@ d3.csv("../DATA/one-person-households.csv")
         .attr("class", "markers");
     
       // Tạo các mốc
+
       markers.selectAll(".marker")
         .data(data)
         .enter().append("circle")
@@ -125,7 +128,7 @@ d3.csv("../DATA/one-person-households.csv")
         .attr("cx", d => x(d.Year))
         .attr("cy", d => y(d["Share of one person households"]))
         .attr("r", 3)
-        .attr("fill", "black")
+        .attr("fill", "000000")
         .on("mouseover", function(event,d) {
           // Hiển thị thông tin mốc khi di chuột vào
           const markerData = [
@@ -133,7 +136,6 @@ d3.csv("../DATA/one-person-households.csv")
             `Entity: ${d.Entity}`,
             `Share of one person households: ${d["Share of one person households"]}%`
           ];
-          console.log(markerData)
           showMarkerTooltip(d3.select(this), markerData);
           
         })
@@ -163,6 +165,11 @@ d3.csv("../DATA/one-person-households.csv")
     function resetMarkerData() {
       // Reset the markerData array
       markerData = [];
+    }
+    function removeMarkers() {
+      // Select all marker elements and remove them one by one
+    const markers = d3.selectAll(".marker");
+      markers.remove();
     }
     
     // Add the clear button and functionality
@@ -201,9 +208,11 @@ d3.csv("../DATA/one-person-households.csv")
     document.querySelectorAll('.list input[type="checkbox"]').forEach(checkbox => {
       checkbox.addEventListener('change', updateChart);
     });
-
+    // Remove the markers
+    removeMarkers();
     updateChart();
-  });
+  }
+);
 
   
 
