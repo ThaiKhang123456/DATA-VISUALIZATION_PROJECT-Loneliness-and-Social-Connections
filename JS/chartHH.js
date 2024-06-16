@@ -10,6 +10,7 @@ d3.csv("../DATA/one-person-households.csv")
       .attr("width", width)
       .attr("height", height);
 
+
     // Create the scales
     const x = d3.scaleLinear()
       .range([50, width - 50])
@@ -25,7 +26,7 @@ d3.csv("../DATA/one-person-households.csv")
     svg.append("g")
       .attr("transform", "translate(50, 0)")
       .call(d3.axisLeft(y));
-
+    
     // Add the labels
     svg.append("text")
       .attr("x", width - 25)
@@ -79,15 +80,16 @@ d3.csv("../DATA/one-person-households.csv")
           .datum(selectedData)
           .attr("d", line)
           .attr("stroke", getRandomColor())
+          .attr("stroke-width", "2px") // Thay đổi độ dày đường line
           .attr("fill", "none")
-          .on("mouseover", function(d, i) {
+          .on("mouseover", function(event, i) {
             d3.selectAll(".line").style("stroke-opacity", 0.2);
             d3.select(this).style("stroke-opacity", 1);
             tooltip.transition()
               .duration(200)
               .style("opacity", 1);
           })
-          .on("mouseout", function(d) {
+          .on("mouseout", function(event,d) {
             d3.selectAll(".line").style("stroke-opacity", 1);
             d3.selectAll(".line").attr("transform", "translate(0,0)");
             tooltip.transition()
@@ -102,6 +104,14 @@ d3.csv("../DATA/one-person-households.csv")
 
 
     }
+
+    function getMouseCoordinates(event) {
+      const x = event.clientX;
+      const y = event.clientY;
+      return { x, y };
+    }
+
+
     function addMarkers(svg, x, y, data) {
       // Tạo group cho các mốc
       const markers = svg.append("g")
@@ -114,7 +124,7 @@ d3.csv("../DATA/one-person-households.csv")
         .attr("class", "marker")
         .attr("cx", d => x(d.Year))
         .attr("cy", d => y(d["Share of one person households"]))
-        .attr("r", 1)
+        .attr("r", 3)
         .attr("fill", "black")
         .on("mouseover", function(event,d) {
           // Hiển thị thông tin mốc khi di chuột vào
@@ -197,11 +207,14 @@ d3.csv("../DATA/one-person-households.csv")
 
   
 
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color;
+    do {
+      color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+    } while (color === '#FFFFFF'); // Lặp lại cho đến khi không phải màu trắng
+    return color;
   }
-  return color;
-}
