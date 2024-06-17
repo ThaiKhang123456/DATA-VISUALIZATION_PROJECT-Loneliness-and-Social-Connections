@@ -29,8 +29,8 @@ h1,h2 {
     padding: 5px
 }
 .left{
-    background-color: #07849d;
-    padding: 5px
+    background-color: #ffffff;
+    padding: 20px
 }
 .right{
     background-color: #07849d;
@@ -42,7 +42,7 @@ h1,h2 {
     overflow-y: scroll; 
     flex: 2;
     background-color: #07849d;
-    padding: 20px;
+    padding: 10px;
     border-left: 1px solid #000000;
 }
 
