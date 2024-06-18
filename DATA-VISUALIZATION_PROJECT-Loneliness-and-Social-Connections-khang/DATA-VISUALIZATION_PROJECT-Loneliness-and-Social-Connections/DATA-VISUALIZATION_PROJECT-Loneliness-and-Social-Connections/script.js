@@ -78,7 +78,7 @@ function updateChart() {
         font: {
             family: 'Arial, sans-serif',
             size: 14,
-            color: 'black'
+            color: 'white'
         }
     };
 
