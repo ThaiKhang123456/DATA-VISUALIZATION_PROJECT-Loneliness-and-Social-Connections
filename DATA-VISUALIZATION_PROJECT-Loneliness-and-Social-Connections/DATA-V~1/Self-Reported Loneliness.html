@@ -5,53 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self-Reported Loneliness</title>
     <link rel="stylesheet" type="text/css" href="CSS/style1.css">
-</head>
-<body>
     <style>
         html, body {
-            height: 85%;
+            height: 100%;
             margin: 0;
             padding: 0;
-        }
-        body {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            #chart {
-                width: 90%;
-                height: 90%;
-        }}
-
-    </style>   
-    <!-- menu -->
+            background-color: #07849D;
+            color: white;
+        }
+        #chart {
+            width: 90%;
+            height: 90%;
+        }
+        .sidebar {
+            position: fixed;
+            top: 30%;
+            right: 0;
+            width: 250px;
+            background: #07849D;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: 40%;
+            overflow-y: auto;
+            color: white;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+            font-weight: bold;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 5px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none; /* Remove underline from links */
+        }
+    </style>
+</head>
+<body>
     <div class="menu">
         <div class="logo">
-            <img src="images/label.png">
+            <img src="images/label.png" alt="Logo">
         </div>
-
         <div class="menu-mini">
             <ul>
                 <li class="menu-item"><a href="./dashboard.html" class="menu-link">Dashboard</a></li>
                 <li class="menu-item"><a href="./index.html" class="menu-link">About us</a></li>
                 <li class="menu-item"><a href="./Self-Reported Loneliness.html" class="menu-link">Self-Reported Loneliness</a></li>
-                <li class="menu-item"><a href="./Reliable Support.html" class="menu-link">Reliable Support</a></li>
-                <li class="menu-item"><a href="../../HTML/HouseHolds.html" class="menu-link">One-Person Households Rate</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Reliable Support</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">One-Person Households Rate</a></li>
             </ul>
         </div>
-    </div>  
+    </div>
     <div class="line-effect"></div>
-    <!-- content -->
     <div class="content">
         <div class="container">
             <div id="chart"></div>
         </div>
     </div>
-
-    <!-- Include Plotly library -->
+    <div class="sidebar">
+        <h3>Edit countries</h3>
+        <ul>
+            <li><a href="#Denmark"><input type="checkbox" id="Denmark" checked> Denmark</a></li>
+            <li><a href="#Switzerland"><input type="checkbox" id="Switzerland" checked> Switzerland</a></li>
+            <li><a href="#Sweden"><input type="checkbox" id="Sweden" checked> Sweden</a></li>
+            <li><a href="#UnitedStates"><input type="checkbox" id="UnitedStates" checked> United States</a></li>
+            <li><a href="#England"><input type="checkbox" id="England" checked> England</a></li>
+            <li><a href="#Netherlands"><input type="checkbox" id="Netherlands" checked> Netherlands</a></li>
+            <li><a href="#Germany"><input type="checkbox" id="Germany" checked> Germany</a></li>
+            <li><a href="#Finland"><input type="checkbox" id="Finland" checked> Finland</a></li>
+            <li><a href="#Spain"><input type="checkbox" id="Spain" checked> Spain</a></li>
+            <li><a href="#Belgium"><input type="checkbox" id="Belgium" checked> Belgium</a></li>
+            <li><a href="#France"><input type="checkbox" id="France" checked> France</a></li>
+            <li><a href="#Austria"><input type="checkbox" id="Austria" checked> Austria</a></li>
+            <li><a href="#Italy"><input type="checkbox" id="Italy" checked> Italy</a></li>
+            <li><a href="#Israel"><input type="checkbox" id="Israel" checked> Israel</a></li>
+            <li><a href="#Greece"><input type="checkbox" id="Greece" checked> Greece</a></li>
+        </ul>
+    </div>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Include your custom script -->
     <script src="starter.js"></script>
     <script src="script.js"></script>
+    <script>
+        var data = [{
+            type: 'bar',
+            x: [25, 26, 30, 30, 33, 35, 37, 39, 40, 42, 45, 46, 47, 48, 62],
+            y: ['Denmark', 'Switzerland', 'Sweden', 'United States', 'England', 'Netherlands', 'Germany', 'Finland', 'Spain', 'Belgium', 'France', 'Austria', 'Italy', 'Israel', 'Greece'],
+            orientation: 'h',
+            text: ['25% in 2005', '26% in 2005', '30% in 2005', '30% in 2018', '33% in 2018', '35% in 2005', '37% in 2005', '39% in 2002', '40% in 2005', '42% in 2005', '45% in 2005', '46% in 2005', '47% in 2005', '48% in 2005', '62% in 2005'],
+            textposition: 'auto',
+            marker: {
+                color: 'rgba(50, 171, 96, 0.6)',
+                line: {
+                    color: 'rgba(50, 171, 96, 1.0)',
+                    width: 1
+                }
+            }
+        }];
+        var layout = {
+            title: {
+                text: 'Self-Reported Loneliness Among Older Adults',
+                font: {
+                    size: 24,
+                    color: 'white'
+                }
+            },
+            xaxis: {
+                title: {
+                    text: 'Percentage of Self-Reported Loneliness',
+                    font: {
+                        size: 18,
+                        color: 'white'
+                    }
+                },
+                tickfont: {
+                    color: 'white'
+                }
+            },
+            yaxis: {
+                tickfont: {
+                    color: 'white'
+                }
+            },
+            paper_bgcolor: '#007B80',
+            plot_bgcolor: '#007B80'
+        };
+        Plotly.newPlot('chart', data, layout);
+        document.getElementById('chart').on('plotly_click', function(data) {
+            const selectedCountry = data.points[0].y;
+            scrollToCountry(selectedCountry);
+        });
+        function scrollToCountry(country) {
+            const countryId = country.replace(/\s+/g, '');
+            const element = document.getElementById(countryId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
 </body>
 </html>
